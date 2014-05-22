@@ -1,3 +1,6 @@
+//Homework1 EX02-05. It's been a great review
+// Domonkos F Vamossy - CS172 ON
+
 #include <iostream> 
 #include <iomanip>
 #include <cctype>
@@ -104,10 +107,10 @@ void ex04()
 {
 int ans;
 std::cout << "Enter an integer between 1 to 10 " << endl;
+cin.clear();
 cin >> ans;
 while (ans>10 || ans < 1)  
 {
-std::cout << "Enter an integer between 1 to 10 " << endl;
 cin >> ans;
 }
 int sum = 0;
@@ -152,8 +155,11 @@ for (int i=0; i < size; i++)
 cout << endl;
 cout << product << endl;
 cout << total << endl;
-printarray(values[size] , size);  // I do not understand why there's an error here
-arraycheck (values[size], size); // I do not understand why there's an error here
+printarray(values, size);  
+arraycheck (values, size); 
+int domi;
+cout << "Isn't this program great???" << endl;
+cin >> domi;
 }
 
 int twice (int n)
@@ -173,7 +179,9 @@ void printarray (int values[], int size)
 {
 	cout << "The array contains the following values: " << endl;
 	for (int i=0; i <size; i++)
+	{
 		cout << values[i] << " ";
+	}
 	cout << endl;
 }
 void arraycheck(int a[], int size)
@@ -182,6 +190,7 @@ void arraycheck(int a[], int size)
 	cout << "Please input an integer" << endl;
 	cin >> n;
 	for (int i=0; i <size; i++)
+	{
 		if (a[i] == n)
 		{
 			cout <<"The number you input is in the array" << endl;
@@ -190,6 +199,7 @@ void arraycheck(int a[], int size)
 		{
 			cout << "The number you input is not in the array" << endl;
 		}
+	}
 }
 void Address ()
 {
