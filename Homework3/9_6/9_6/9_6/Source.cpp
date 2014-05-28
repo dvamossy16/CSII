@@ -12,19 +12,15 @@ private:
 	double a, b, c;
 	double r1, r2;
 	double discriminant;
-	bool imaginary;
-
+	
 	void input ();
-	void getA();
-	void getB();
-	void getC();
 	void solvePositiveRoot();
 	void solveNegativeRoot();
 	void getDiscriminant();
 	void printResults();
-	void setA(double);
-	void setB(double);
-	void setC(double);
+	void getA(double);
+	void getB(double);
+	void getC(double);
 };
 
 int main () {
@@ -38,10 +34,13 @@ void QuadraticEquation::input()
 	double _a, _b, _c;
 	cout << "Please enter a value for a: " << endl;
 	cin >> _a;
+	getA(_a);
 	cout << "Please enter a value for b: " << endl;
 	cin >> _b;
+	getB(_b);
 	cout << "Please enter a value for c: " << endl;
 	cin >> _c;
+	getC(_c);
 }
 QuadraticEquation::QuadraticEquation()
 {
@@ -51,20 +50,15 @@ QuadraticEquation::QuadraticEquation()
 }
 QuadraticEquation::QuadraticEquation(double _a, double _b, double _c)
 {
-	setA(_a);
-	setB(_b);
-	setC(_c);
+	getA(_a);
+	getB(_b);
+	getC(_c);
 	getDiscriminant();
 	printResults();
 }
 void QuadraticEquation::getDiscriminant()
 {
 	discriminant = (b*b)+(-4*a*c);
-	if (discriminant >=0)
-		imaginary = false;
-	else {
-		imaginary = true;
-	}
 }
 void QuadraticEquation::solvePositiveRoot()
 {
@@ -76,26 +70,31 @@ void QuadraticEquation::solveNegativeRoot()
 }
 void QuadraticEquation::printResults()
 {
-	if (imaginary == false)
+	if (discriminant>0)
 	{
 		solvePositiveRoot();
 		solveNegativeRoot();
 		cout << "When y = 0, x = " << r1 << " or " << r2 << endl;
+	}
+	else if (discriminant == 0)
+	{
+		solvePositiveRoot();
+		cout <<"When y = 0, x = " << r1 << endl;
 	}
 	else 
 	{
 		cout << "The equation has no real roots" << endl;
 	}
 }
-void QuadraticEquation:: setA(double input)
+void QuadraticEquation:: getA(double input)
 {
 	a = input;
 }
-void QuadraticEquation:: setB(double input)
+void QuadraticEquation:: getB(double input)
 {
 	b = input;
 }
-void QuadraticEquation:: setC(double input)
+void QuadraticEquation:: getC(double input)
 {
 	c = input;
 }
