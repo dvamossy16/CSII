@@ -9,9 +9,7 @@ class MyInteger
 private: 
 int value; 
 public: 
-MyInteger(int val)
-{
-} 
+MyInteger(int val):value(val){} 
 
 int getValue() const
 {
@@ -19,26 +17,12 @@ int getValue() const
 } 
 bool isEven() const
 {
-	if (value % 2 == 0)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-} 
+	return value % 2 == 0;
+}
 bool isOdd() const
 {
-	if (value % 2 == 1)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
-} 
+	return value % 2 == 1;
+}
 bool isPrime() const; 
 
 bool equals(int n) const; 
@@ -54,7 +38,7 @@ static bool isEven(int n)
 	{
 		return false;
 	}
-}; 
+} 
 static bool isOdd(int n)
 {
 	if (n % 2 == 1)
@@ -65,7 +49,7 @@ static bool isOdd(int n)
 	{
 		return false;
 	}
-}; 
+} 
 static bool isPrime(int n); 
 
 static bool isEven(const MyInteger& myInt)
