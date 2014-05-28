@@ -13,11 +13,11 @@ int main()
 	char characters[arraySize] = {'b','z','w','q','d','t','c','u','f','s','o','x','a','e','v','z','l','r','I','g'};
 	char s1[80];
 	int length;
-	cout << "Please input a string: ";
+	cout << "Enter a string s: ";
 	cin >> s1;
-	cout << "Original: " << s1 << endl;
+	//cout << "Original: " << s1 << endl;
 	string_sort(s1);
-	cout << "Sorted: \n"<< s1 << endl;
+	cout << "The sorted string is: \n"<< s1 << endl;
 	system ("pause");
 	return 0;
 }//main
