@@ -9,6 +9,7 @@ bool MyInteger::isPrime() const
 MyInteger mi(value);
 int num = mi.getValue(); 
 for(int i = 2; i <= sqrt((double) num); i++) 
+{
 if(num % i == 0) 
 {
 	return false; 
@@ -16,6 +17,7 @@ if(num % i == 0)
 else 
 {
 return true; 
+}
 }
 } 
 
