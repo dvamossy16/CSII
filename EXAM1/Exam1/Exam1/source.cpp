@@ -1,3 +1,6 @@
+//Domonkos F Vamossy - Exam1
+// I affirm that all code given below was written solely by me, Domonkos F Vamossy, and that any help I received adhered to the rules stated for this exam.
+//no help received 
 #include <iostream>
 #include "Movie.h"
 #include "Theater.h"
