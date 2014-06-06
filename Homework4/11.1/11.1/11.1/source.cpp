@@ -11,18 +11,14 @@ int main ()
 	cin >> count;
 
 	x = new int[count];
-
+	int sum = 0;
 	for (int i=0; i<count; i++) {
 		cout << "Enter a number: " << endl;
 		cin >> x[i];
+		sum = sum + x[i];
 	}
-int sum = 0;
-int average;
+double average = ((double)sum)/count;
 int greater = 0;
-for (int i=0; i<count; i++) {
-	sum = sum + x[i];
-	average = sum / count;
-}
 for (int i = 0; i<count; i++) {
 if (x[i]>average) {
 	greater++;

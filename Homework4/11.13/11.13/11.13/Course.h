@@ -14,6 +14,9 @@ public:
 	void dropStudent (const string& name);
 	string* getStudents() const;
 	int getNumberOfStudents() const;
+	void extendCapacity();
+	void clear();
+	Course::Course(const Course& other);
 
 private:
 	string courseName;

@@ -9,7 +9,6 @@ int* doubleCapacity(const int *list, int size)
 	{
 		p[i] = list[i];
 	}
-	delete[] list;
 	return p;
 }
 
@@ -19,9 +18,9 @@ int main()
 	int size;
 	cin >> size;
 	int *list = new int[size];
-	int doubleSize = size * 2;
-	doubleCapacity(list, doubleSize);
-	cout << "The new size of the array is " << doubleSize << endl;
+	int *p = doubleCapacity(list, size);
+	delete [] list;
+	delete [] p;
 	system ("pause");
 	return 0;
 }

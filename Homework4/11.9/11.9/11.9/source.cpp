@@ -23,22 +23,6 @@ int main()
  cout << "Does r1 contain (3, 3)? (0 = no, 1 = yes): " << (*r1).contains(3, 3) << endl << endl;
  cout << "Does r1 contain r2? (0 = no, 1 = yes): " << (*r1).contains(*r2) << endl << endl;
  cout << "Does r3 overlap r1? (0 = no, 1 = yes): " << (*r1).overlaps(*r3) << endl << endl;
- //Rectangle 4
- Rectangle2D *r4 = new Rectangle2D(*r1);//copy constructor
- cout << "r4 added as a copy of r1." << endl;
- cout << "r4 parameters are: x = " << (*r4).getX() << ", y = " << (*r4).getY() << ", Width = " << (*r4).getWidth()
-  << ", Height = " << (*r4).getHeight() << endl;
- cout << "The perimeter of r4 is: " << (*r4).getPerimeter() << ". The area of r4 is: " << (*r4).getArea() << "." << endl << endl;
- //Tests the setters
- (*r4).setX(4);
- (*r4).setY(4);
- (*r4).setWidth(10);
- (*r4).setHeight(10);
- cout << "r4 has been modified. New parameters are: x = " << (*r4).getX() << ", y = " << (*r4).getY() << ", Width = " << (*r4).getWidth()
-  << ", Height = " << (*r4).getHeight() << endl;
- cout << "The perimeter of r4 is: " << (*r4).getPerimeter() << ". The area of r4 is: " << (*r4).getArea() << "." << endl << endl;
- //Tests the destructor
- delete r4;
  system("PAUSE");
  return 0;
 }
