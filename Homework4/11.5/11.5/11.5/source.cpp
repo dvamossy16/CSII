@@ -1,7 +1,7 @@
 #include <iostream>
 
 using namespace std;
-int smallest(int a[], int n);
+int smallest(int y[], int n);
 
 int main () {
 	int x[]={1,2,4,5,10,100,2,-22};
@@ -12,16 +12,16 @@ int main () {
 
 
 
-int smallest(int a[], int n)
+int smallest(int y[], int n)
 {
    static int *min;
 
    if (min == 0)
-      min = new int(a[n - 1]);
-   else if (*min > a[n - 1])
-      *min = a[n - 1];
+      min = new int(y[n - 1]);
+   else if (*min > y[n - 1])
+      *min = y[n - 1];
    if (n == 1)
       return *min;
    else
-      return smallest(a, n - 1);
+      return smallest(y, n - 1);
 }
