@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-int* doubleCapacity(int *list, int size)
+int* doubleCapacity(const int *list, int size)
 {
 	int newsize = size *2;
 	int *p = new int[newsize];
