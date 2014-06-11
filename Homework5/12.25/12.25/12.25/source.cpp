@@ -16,9 +16,7 @@ int main()
 	myAccount.withdraw(5.00);
 	myAccount.withdraw(4.00);
 	myAccount.withdraw(2.00);
-	cout <<"Account Holder Name: " << myAccount.getName() << endl;
-	cout <<"Monthly Interest: " << myAccount.getMonthlyInterestRate() << endl;
-	cout <<"Balance: " << myAccount.getBalance() << endl;
+	void printout();
 	system ("pause");
 		return 0;
 }

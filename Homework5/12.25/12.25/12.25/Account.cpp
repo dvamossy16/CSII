@@ -69,10 +69,14 @@ double Account::deposit(double amount)
 		transactions.push_back(transaction);
 		return balance += amount;
 }
-void Account::printout()
-{
-for (int i = 0; i < transactions.size(); i++) {
-			cout << " " << transactions.at(i).write() << endl;
-		}
+void Account::printout() {
+	cout <<"Account Holder Name: " << Account.getName() << endl;
+	cout <<"Monthly Interest: " << Account.getMonthlyInterestRate() << endl;
+	cout <<"Balance: " << Account.getBalance() << endl;
+	cout << "Transactions: " << endl;
+	for (int i = 0; i < transactions.size(); i++) 
+	{
+		cout << "\t";
+		transactions.at(i).write();
+	}
 }
-

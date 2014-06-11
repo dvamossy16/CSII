@@ -46,5 +46,6 @@ void Transaction::setDescription(string newDescription)
 }
 void Transaction::write()
 {
-
+	cout << "Transaction, " << "type: " << type << ", date: " << Date << ", amount: " << amount << " , balance: " << balance << ", description: " << description << endl;
+}
 
