@@ -13,25 +13,26 @@ void shuffle(vector<T> & v)
 srand (time(0));
 for (int i=0; i < elements; i++)
 {
-	T index = rand() % elements;
-	T temp = vector[i];
-	vector[i] = vector[index];
-	vector[index] = temp;
+	int index = rand() % elements;
+	T temp = v[i];
+	v[i] = v[index];
+	v[index] = temp;
 }
 }
 int main ()
 {
 
-	vector<int> myvector(elements);
+	vector<int> myvector;
 	int temp2;
-	for (int i=0; i < 9; i++)
+	for (int i=0; i < elements; i++)
 	{
 		cin >> temp2;
 		myvector.push_back(temp2);
 	}
+	cout << endl;
 	cout << "You have entered: " << myvector.size() << endl;
 	
-	for (int j=0; j < 10; j++)
+	for (int j=0; j < elements; j++)
 	{
 		shuffle(myvector);
 	cout << " " << myvector[j] << endl;
