@@ -19,5 +19,6 @@ int main()
 	cout <<"Account Holder Name: " << myAccount.getName() << endl;
 	cout <<"Monthly Interest: " << myAccount.getMonthlyInterestRate() << endl;
 	cout <<"Balance: " << myAccount.getBalance() << endl;
+	system ("pause");
 		return 0;
 }

@@ -43,7 +43,7 @@ void Account::setID(int newID)
 }
 void Account::setName(string newName)
 {
-	name = newName
+	name = newName;
 }
 void Account::setBalance(double newBalance) 
 {
