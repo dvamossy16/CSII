@@ -20,7 +20,7 @@ public:
 	void push_back(const T& i);
 	void pop_back();
 	int size();
-	int at(int i);
+	T at(int i);
 	bool empty() const;
 	void clear();
 	void swap(Vector &v2, Vector &v1);

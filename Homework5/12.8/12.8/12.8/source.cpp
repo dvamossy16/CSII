@@ -4,14 +4,14 @@
 using namespace std;
 
 template <typename T>
-T Vector<T>::Vector()
+Vector<T>::Vector()
 {
 	maxsize = 10;
 	vec = new T[maxsize];
 	vsize = 0;
 }
 template <typename T>
-T Vector<T>::Vector (int i)
+Vector<T>::Vector (int i)
 {
 	maxsize = i;
 	vec = new T[maxsize];
@@ -19,7 +19,7 @@ T Vector<T>::Vector (int i)
 }
 
 template <typename T>
-T Vector<T>::~Vector()
+Vector<T>::~Vector()
 {
 	delete[] vec;
 }
@@ -49,7 +49,7 @@ void Vector<T>::alloc_new()
 	vec = temp;
 }
 template <typename T>
-T Vector<T>::size()
+int Vector<T>::size()
 {
 	return vsize;
 }
