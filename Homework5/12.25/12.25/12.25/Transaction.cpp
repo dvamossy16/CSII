@@ -44,5 +44,12 @@ void Transaction::setDescription(string newDescription)
 {
 		description = newDescription;
 }
+string Transaction::toString()
+{
+for (int i = 0; i < transactions.size(); i++) {
+			cout << " " << transactions.at(i) << endl;
+		}
+		return "Transactions: " << transactions;
+	}
 
 
