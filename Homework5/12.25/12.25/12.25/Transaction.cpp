@@ -13,6 +13,11 @@ Transaction::Transaction(char type, double amount, double balance, string descri
 	this->amount = amount;
 	this->balance = balance;
 	this->description = description;
+	time_t t = time(0);
+	struct tm* now = localtime(&t);
+	char buf[128];
+	strftime(buf, 128, "%Y-%m-%d %H:%M:%S", now);
+	Date = buf;
 }
 
 double Transaction::getAmount()

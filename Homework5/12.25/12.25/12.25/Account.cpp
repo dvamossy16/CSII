@@ -50,13 +50,13 @@ double Account::getMonthlyInterestRate()
 }
 double Account::withdraw(double amount) 
 {
-		return balance -= amount;
 		Transaction transaction('W', amount, balance, "withdrawal made");
-		return balance;	
+		transactions.push_back(transaction);
+		return balance-=amount;	
 }	
 double Account::deposit(double amount) 
 {
-		return balance += amount;
 		Transaction transaction('D', amount, balance, "deposit made");
-		return balance;	
+		transactions.push_back(transaction);
+		return balance += amount;
 }

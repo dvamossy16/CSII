@@ -16,7 +16,7 @@ private:
 	double balance;
 	static double annualInterestRate;
 	string name;
-	vector<Transaction> transaction;
+	vector<Transaction> transactions;
 
 
 public:

@@ -12,6 +12,7 @@ class Transaction
 {
 private:
 	char type;
+	string Date;
 	double amount;
 	double balance;
 	string description;
@@ -23,7 +24,7 @@ public:
 	string getDescription();
 	void setAmount(double newAmount);
 	void setBalance(double newBalance);
-	void setDescription(string);
+	void setDescription(string newDescription);
 };
 
 #endif
