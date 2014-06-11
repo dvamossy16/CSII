@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="source.cpp" />
+    <ClCompile Include="Transaction.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h" />
