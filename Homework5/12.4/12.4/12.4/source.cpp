@@ -20,9 +20,6 @@ int main () {
 	int list1[] = {1,2,3,4,5};
 	double list2[] = {1.5, 2.3, 1.8, 3.7, 1.1, 6.7, 3.5, 2.2};
 	string list3[] = { "Domi", "Mr. Domi", "Domi Domi", "Roger Federer"};
-	isSorted<int>(list1, 5);
-	isSorted<double>(list2,8);
-	isSorted<string>(list3,4);
 	cout << " " << isSorted<int>(list1,5) << endl;
 	cout << " " << isSorted<double>(list2,8) << endl;
 	cout << " " << isSorted<string>(list3,4) << endl;
