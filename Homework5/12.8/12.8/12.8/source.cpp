@@ -17,9 +17,9 @@ Vector::Vector (int i)
 }
 
 Vector::~Vector()
-	   {
-		   delete[] vec;
-	   }
+{
+	delete[] vec;
+}
 void Vector::push_back(int i)
 {
 	if (vsize+1>maxsize)
@@ -30,7 +30,7 @@ void Vector::push_back(int i)
 int Vector::at(int i)
 {
 	if (i<vsize)
-	return vec[i];
+		return vec[i];
 	throw 10;
 }
 void Vector::alloc_new()
@@ -38,9 +38,9 @@ void Vector::alloc_new()
 	maxsize = vsize*2;
 	int* temp = new int[maxsize];
 	for (int i=0; i<vsize;i++)
-	temp[i]=vec[i];
-delete[] vec;
-vec = temp;
+		temp[i]=vec[i];
+	delete[] vec;
+	vec = temp;
 }
 int Vector::size()
 {
@@ -49,32 +49,24 @@ int Vector::size()
 
 void Vector::pop_back(int i)
 {
-if (vsize >0)
-{
-int *temp = new int[vsize];
-for (int m=0; m < vsize; m++)
-	temp[i]=vec[i];
-delete [] vec;
-vec = temp;
-vsize --;
-}
-else {
-	cout << "Vector size cannot be less than 0. " << endl;
-}
+	if (vsize >0)
+	{
+		vsize --;
+	}
+	else {
+		cout << "Vector size cannot be less than 0. " << endl;
+	}
 }
 void Vector::clear()
 {
-	while (vsize > 0)
-		vsize --;
+	vsize = 0;
 }
 bool Vector::empty() const
 {
-	if (vsize == 0)
-		return true;
-	return false;
+	return vsize == 0;
 }
 
-void swap (Vector &v2, Vector &v1)
+void swap (Vector<T> &v2, Vector<T> &v1)
 {
 	Vector temp;
 	v2 = temp;
@@ -105,5 +97,5 @@ int main ()
 	cout << "You have entered: " << myvector2.size() << endl;
 	system ("pause");
 	return 0;
-	}
+}
 
