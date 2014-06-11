@@ -69,3 +69,10 @@ double Account::deposit(double amount)
 		transactions.push_back(transaction);
 		return balance += amount;
 }
+void Account::printout()
+{
+for (int i = 0; i < transactions.size(); i++) {
+			cout << " " << transactions.at(i).write() << endl;
+		}
+}
+

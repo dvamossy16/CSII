@@ -33,6 +33,7 @@ public:
 	double getMonthlyInterestRate();
 	double withdraw(double amount);
 	double deposit(double amount);
+	void printout();
 };
 
 

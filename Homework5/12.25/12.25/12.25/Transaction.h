@@ -25,7 +25,7 @@ public:
 	void setAmount(double newAmount);
 	void setBalance(double newBalance);
 	void setDescription(string newDescription);
-	string toString();
+	void write();
 };
 
 #endif
