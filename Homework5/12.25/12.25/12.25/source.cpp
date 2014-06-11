@@ -9,4 +9,15 @@ using namespace std;
 
 int main()
 {
-	
+	Account myAccount = Account("George", 1122, 1000.00);
+	myAccount.deposit(30.00);
+	myAccount.deposit(40.00);
+	myAccount.deposit(50.00);
+	myAccount.withdraw(5.00);
+	myAccount.withdraw(4.00);
+	myAccount.withdraw(2.00);
+	cout <<"Account Holder Name: " << myAccount.getName() << endl;
+	cout <<"Monthly Interest: " << myAccount.getMonthlyInterestRate() << endl;
+	cout <<"Balance: " << myAccount.getBalance() << endl;
+		return 0;
+}

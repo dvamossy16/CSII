@@ -14,16 +14,18 @@ class Account
 private:
 	int id;
 	double balance;
-	static double annualInterestRate;
 	string name;
 	vector<Transaction> transactions;
 
 
 public:
+	static double annualInterestRate;
 	Account();
 	Account(string name, int id, double balance);
 	int getID();
 	double getBalance();
+	string getName();
+	void setName(string newName);
 	double getAnnualInterestRate();
 	void setID(int newID);
 	void setBalance(double newBalance);

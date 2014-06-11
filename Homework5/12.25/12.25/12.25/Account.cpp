@@ -19,6 +19,7 @@ Account::Account()
 		balance = 0;
 		annualInterestRate=0;
 	}
+double Account::annualInterestRate = 0.05;
 
 int Account::getID()
 {
@@ -28,6 +29,10 @@ double Account::getBalance()
 {
 		return balance;
 }
+string Account::getName()
+{
+	return name;
+}
 double Account::getAnnualInterestRate()
 {
 		return annualInterestRate;
@@ -35,6 +40,10 @@ double Account::getAnnualInterestRate()
 void Account::setID(int newID) 
 {
 		id = newID;
+}
+void Account::setName(string newName)
+{
+	name = newName
 }
 void Account::setBalance(double newBalance) 
 {
