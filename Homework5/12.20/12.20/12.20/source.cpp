@@ -2,6 +2,7 @@
 #include <vector>
 #include <string>
 #include <ctime>
+#include <cstdlib>
 
 using namespace std;
 
@@ -10,7 +11,6 @@ const int elements = 10;
 template <typename T>
 void shuffle(vector<T> & v)
 {
-srand (time(0));
 for (int i=0; i < elements; i++)
 {
 	int index = rand() % elements;
@@ -21,7 +21,7 @@ for (int i=0; i < elements; i++)
 }
 int main ()
 {
-
+	srand (time(0));
 	vector<int> myvector;
 	int temp2;
 	for (int i=0; i < elements; i++)
