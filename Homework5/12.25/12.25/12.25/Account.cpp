@@ -70,9 +70,9 @@ double Account::deposit(double amount)
 		return balance += amount;
 }
 void Account::printout() {
-	cout <<"Account Holder Name: " << Account.getName() << endl;
-	cout <<"Monthly Interest: " << Account.getMonthlyInterestRate() << endl;
-	cout <<"Balance: " << Account.getBalance() << endl;
+	cout <<"Account Holder Name: " << getName() << endl;
+	cout <<"Monthly Interest: " << getMonthlyInterestRate() << endl;
+	cout <<"Balance: " << getBalance() << endl;
 	cout << "Transactions: " << endl;
 	for (int i = 0; i < transactions.size(); i++) 
 	{
