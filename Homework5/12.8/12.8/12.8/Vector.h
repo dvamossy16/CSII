@@ -17,8 +17,8 @@ public:
 	Vector();
 	Vector(int);
 	~Vector();
-	void push_back(int);
-	void pop_back(int);
+	void push_back(const T&);
+	void pop_back();
 	int size();
 	int at(int i);
 	bool empty() const;
