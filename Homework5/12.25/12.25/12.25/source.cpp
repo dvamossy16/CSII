@@ -16,7 +16,7 @@ int main()
 	myAccount.withdraw(5.00);
 	myAccount.withdraw(4.00);
 	myAccount.withdraw(2.00);
-	void printout();
+	myAccount.printout();
 	system ("pause");
 		return 0;
 }
