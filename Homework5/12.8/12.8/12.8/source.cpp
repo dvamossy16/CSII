@@ -24,7 +24,7 @@ T Vector<T>::~Vector()
 	delete[] vec;
 }
 template <typename T>
-void Vector<T>::push_back(const T&)
+void Vector<T>::push_back(const T& i)
 {
 	if (vsize+1>maxsize)
 		alloc_new();
