@@ -31,10 +31,11 @@ int main ()
 	}
 	cout << endl;
 	cout << "You have entered: " << myvector.size() << endl;
-	
+
+	shuffle(myvector);	
 	for (int j=0; j < elements; j++)
 	{
-		shuffle(myvector);
+		
 	cout << " " << myvector[j] << endl;
 	}	
 	system ("pause");
