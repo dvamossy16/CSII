@@ -49,8 +49,18 @@ int Vector::size()
 
 void Vector::pop_back(int i)
 {
-vec[vsize]=i;
-	vsize--;
+if (vsize >0)
+{
+int *temp = new int[vsize];
+for (int m=0; m < vsize; m++)
+	temp[i]=vec[i];
+delete [] vec;
+vec = temp;
+vsize --;
+}
+else {
+	cout << "Vector size cannot be less than 0. " << endl;
+}
 }
 void Vector::clear()
 {
