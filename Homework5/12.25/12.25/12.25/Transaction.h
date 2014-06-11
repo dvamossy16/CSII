@@ -23,7 +23,6 @@ public:
 		this->balance = balance;
 		this->description = description;
 	}
-	vo
 };
 
 #endif

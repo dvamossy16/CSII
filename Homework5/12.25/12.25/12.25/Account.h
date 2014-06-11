@@ -20,7 +20,7 @@ private:
 
 public:
 	Account();
-	Account(const Account&);
+	Account(string name, int id, double balance);
 	int getID();
 	double getBalance();
 	double getAnnualInterestRate();

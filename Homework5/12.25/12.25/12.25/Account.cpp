@@ -2,15 +2,15 @@
 #include <string>
 #include <vector>
 #include "Account.h"
+#include "Transaction.h"
 
 using namespace std;
 
-Account::Account(const Account&)
+Account::Account(string name, int id, double balance)
 {
-		this->annualInterestRate = annualInterestRate;
-		this->balance = balance;
-		this->id = id;
-		this->name = name;
+	this->name = name;
+	this->id = id;
+	this->balance = balance;
 }
 Account::Account()
 	{ 
