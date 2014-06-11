@@ -3,37 +3,43 @@
 
 using namespace std;
 
-Vector::Vector()
+template <typename T>
+T Vector<T>::Vector()
 {
 	maxsize = 10;
 	vec = new int[maxsize];
 	vsize = 0;
 }
-Vector::Vector (int i)
+template <typename T>
+T Vector<T>::Vector (int i)
 {
 	maxsize = i;
 	vec = new int[maxsize];
 	vsize = 0;
 }
 
-Vector::~Vector()
+template <typename T>
+T Vector<T>::~Vector()
 {
 	delete[] vec;
 }
-void Vector::push_back(int i)
+template <typename T>
+void Vector<T>::push_back(int i)
 {
 	if (vsize+1>maxsize)
 		alloc_new();
 	vec[vsize]=i;
 	vsize++;
 }
-int Vector::at(int i)
+template <typename T>
+T Vector<T>::at(int i)
 {
 	if (i<vsize)
 		return vec[i];
 	throw 10;
 }
-void Vector::alloc_new()
+template <typename T>
+void Vector<T>::alloc_new()
 {
 	maxsize = vsize*2;
 	int* temp = new int[maxsize];
@@ -42,12 +48,14 @@ void Vector::alloc_new()
 	delete[] vec;
 	vec = temp;
 }
-int Vector::size()
+template <typename T>
+T Vector<T>::size()
 {
 	return vsize;
 }
 
-void Vector::pop_back(int i)
+template <typename T>
+void Vector<T>::pop_back(int i)
 {
 	if (vsize >0)
 	{
@@ -57,16 +65,20 @@ void Vector::pop_back(int i)
 		cout << "Vector size cannot be less than 0. " << endl;
 	}
 }
-void Vector::clear()
+template <typename T>
+void Vector<T>::clear()
 {
 	vsize = 0;
 }
-bool Vector::empty() const
+template <typename T>
+
+bool Vector<T>::empty() const
 {
 	return vsize == 0;
 }
 
-void swap (Vector<T> &v2, Vector<T> &v1)
+template <typename T>
+void Vector<T>::swap(Vector<T> &v2, Vector<T> &v1)
 {
 	Vector temp;
 	v2 = temp;
