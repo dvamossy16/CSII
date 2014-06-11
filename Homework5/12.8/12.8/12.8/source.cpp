@@ -7,14 +7,14 @@ template <typename T>
 T Vector<T>::Vector()
 {
 	maxsize = 10;
-	vec = new int[maxsize];
+	vec = new T[maxsize];
 	vsize = 0;
 }
 template <typename T>
 T Vector<T>::Vector (int i)
 {
 	maxsize = i;
-	vec = new int[maxsize];
+	vec = new T[maxsize];
 	vsize = 0;
 }
 
@@ -42,7 +42,7 @@ template <typename T>
 void Vector<T>::alloc_new()
 {
 	maxsize = vsize*2;
-	int* temp = new int[maxsize];
+	T* temp = new int[maxsize];
 	for (int i=0; i<vsize;i++)
 		temp[i]=vec[i];
 	delete[] vec;
@@ -88,7 +88,7 @@ void Vector<T>::swap(Vector<T> &v2, Vector<T> &v1)
 
 int main ()
 {
-	Vector myvector;
+	Vector<int> myvector;
 	int tmp;
 	while(1)
 	{
@@ -98,7 +98,7 @@ int main ()
 		myvector.push_back(tmp);
 	}
 	cout << "You have entered: " << myvector.size() << endl;
-	Vector myvector2;
+	Vector<int> myvector2;
 	while(1)
 	{
 		cin >> tmp;

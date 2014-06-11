@@ -9,7 +9,7 @@ template<typename T>
 class Vector
 {
 private:
-	int *vec;
+	T *vec;
 	int vsize, maxsize;
 	void alloc_new();
 	
