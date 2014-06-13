@@ -11,13 +11,11 @@ int main() {
 	ofstream output;
     output.open("EXCERCISE13_1.txt", ofstream::out | ofstream::app);
     int list[MAX_SIZE];
-    cout << "The 100 integers are: " << endl;
+    cout << "The 100 integers are: ";
     for (int i = 0; i < MAX_SIZE; i++)
     {
-    cout<<i+1<<". ";
-	list[i] = rand() % 100000;
-	cout << list[i] << endl;
-    output << list[i] << endl;
+   	list[i] = rand() % 100000;
+	output << list[i] << " ";
      }
   output.close();
   cout << "Done" << endl << endl;
