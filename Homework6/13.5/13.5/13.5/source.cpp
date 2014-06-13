@@ -14,11 +14,11 @@ int main ( )
   
  while (another =='y')
  {
-  babyFile.open("babynames2004.txt");
+  babyFile.open("babynames2010.txt");
   // verify that it opened
   if (babyFile.fail( ))
   {
-   cout << "Can't open babynames2004.txt\n";
+   cout << "Can't open babynames2010.txt\n";
    exit(1);
   } 
  
