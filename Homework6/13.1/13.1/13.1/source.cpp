@@ -2,21 +2,21 @@
 #include <fstream>
 #include <cstdlib>
 #include <ctime>
+#include <iomanip>
 
 using namespace std;
 const int MAX_SIZE = 100;
-int size = 100;
 int main() {
-
-    ofstream output;
+	srand (time(NULL));
+	ofstream output;
     output.open("EXCERCISE13_1.txt");  
     int list[MAX_SIZE];
-    cout << "Enter 100 integers: " << endl;
-    cin >> size;
+    cout << "The 100 integers are: " << endl;
     for (int i = 0; i < MAX_SIZE; i++)
     {
     cout<<i+1<<". ";
-    cin >> list[i];
+	list[i] = rand() % 100000;
+	cout << list[i] << endl;
     output << list[i] << endl;
      }
   output.close();
