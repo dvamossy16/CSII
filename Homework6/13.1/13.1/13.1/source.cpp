@@ -11,7 +11,6 @@ int main() {
 	ofstream output;
     output.open("EXCERCISE13_1.txt", ofstream::out | ofstream::app);
     int list[MAX_SIZE];
-    cout << "The 100 integers are: ";
     for (int i = 0; i < MAX_SIZE; i++)
     {
    	list[i] = rand() % 100000;
