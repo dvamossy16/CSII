@@ -4,17 +4,21 @@
 
 using namespace std;
 
-
 int main () 
 {
 string line;
 int sum=0;
-ifstream inData ;
-inData.open("countletters.txt");
+string filename;
+cout << "Please enter a file you would like to open: " << endl;
+cin >> filename;
+ifstream input (filename.c_str());
 
-while(!inData.eof())
+if (input.fail())
+	cout << filename << "does not exist" << endl;
+else
+	while(!input.eof())
 {
-getline(inData,line);
+getline(input,line);
 
     int numofChars= line.length();
     for (unsigned int n = 0; n<line.length();n++)
