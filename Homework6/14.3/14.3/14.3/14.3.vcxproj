@@ -62,7 +62,6 @@
   <ItemGroup>
     <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CircleUse.cpp" />
-    <ClCompile Include="source" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Circle.h" />

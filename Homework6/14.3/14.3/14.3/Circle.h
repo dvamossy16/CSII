@@ -11,6 +11,11 @@ public:
 	double getRadius();
 	void setRadius(double);
 	bool operator<(Circle& that);
+	bool operator>(Circle& that);
+	bool operator==(Circle& that);
+	bool operator!=(Circle& that);
+	bool operator>=(Circle& that);
+	bool operator<=(Circle& that);
 private:
 	double radius;
 };

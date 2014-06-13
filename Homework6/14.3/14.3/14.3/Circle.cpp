@@ -34,3 +34,26 @@ bool Circle::operator<(Circle& that)
 {
 	return getRadius() < that.getRadius();
 }
+
+bool Circle::operator>(Circle& that)
+{
+	return getRadius() > that.getRadius();
+}
+bool Circle::operator==(Circle& that)
+{
+	return getRadius() == that.getRadius();
+}
+bool Circle::operator!=(Circle& that)
+{
+	return getRadius() != that.getRadius();
+}
+
+bool Circle::operator<=(Circle& that)
+{
+	return getRadius() <= that.getRadius();
+}
+
+bool Circle::operator>=(Circle& that)
+{
+	return getRadius() >= that.getRadius();
+}
