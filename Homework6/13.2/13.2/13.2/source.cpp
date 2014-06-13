@@ -19,16 +19,8 @@ else
 	while(!input.eof())
 {
 getline(input,line);
-
     int numofChars= line.length();
-    for (unsigned int n = 0; n<line.length();n++)
-    { 
-    if (line.at(n) == ' ')
-    {
-    numofChars--;
-    }
-    }
-sum=numofChars+sum;
+    sum=numofChars+sum;
 }
 cout << "Number of characters: "<< sum << endl;
     return 0 ;
