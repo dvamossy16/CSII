@@ -1,3 +1,5 @@
+#include<string>
+
 class Complex{
 public:
  Complex();
@@ -9,6 +11,7 @@ public:
  Complex mult(Complex c);//Multiplication: z1. z2 = (x1x2 - y1y2) + i(x1y2 + x2y1)
  Complex div(Complex c);
  Complex abs(Complex c);
+ string toString();
  void print();
  double getReal() const;
  double getImag() const;
