@@ -1,5 +1,7 @@
 
 #include <iostream>
+#include<string>
+#include <sstream>
 #include "Complex.h"
 using namespace std;
 
@@ -74,4 +76,10 @@ void Complex::setReal(double r){
 }
 void Complex::setImag(double i){
  imag = i;
+}
+string Complex::toString()
+{
+stringstream ss;
+ss << real << " + " << imag << "i";
+return ss.str();
 }
