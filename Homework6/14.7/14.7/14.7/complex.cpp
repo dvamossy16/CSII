@@ -1,7 +1,8 @@
 
 #include <iostream>
-#include<string>
+#include <string>
 #include <sstream>
+#include <cmath>
 #include "Complex.h"
 using namespace std;
 
@@ -19,40 +20,38 @@ Complex::Complex(double r, double i){
  imag = i;
 }
 
-Complex::Complex(Complex &obj){
+Complex::Complex(const Complex& obj){
  real = obj.real;
  imag = obj.imag;
 }
 
-Complex Complex::add(Complex c){
+Complex Complex::add(const Complex& c){
  Complex sum;
  sum.real = real + c.real;
  sum.imag = imag + c.imag;
  return sum;
 }
-Complex Complex::sub(Complex c){
+Complex Complex::sub(const Complex& c){
  Complex sub;
  sub.real = real - c.real;
  sub.imag = imag - c.imag;
  return sub;
 }
-Complex Complex::mult(Complex c){//real = x1, y1 = imag  c.real = x2, c.imag = y2
+Complex Complex::mult(const Complex& c){//real = x1, y1 = imag  c.real = x2, c.imag = y2
  Complex mult;//Multiplication: z1. z2 = (x1x2 - y1y2) + i(x1y2 + x2y1)
  mult.real = real*c.real - imag*c.imag;
  mult.imag = real*c.imag + c.real*imag;
  return mult;
 }
-Complex Complex::div(Complex c){
+Complex Complex::div(const Complex& c){
  Complex div;//a=real,b=imag,c=c.real,d=c.imag
  div.real = (real*c.real+imag*c.imag)/(c.real*c.real + c.imag*c.imag);
  div.imag = (imag*c.real-real*c.imag)/(c.real*c.real + c.imag*c.imag);
  return div;
 }
-Complex Complex::abs(Complex c)
+double Complex::abs()
 {
-	Complex abs;
-	abs.real = sqrt(real*c.real*real*c.real+imag*c.imag*imag*c.imag);
-		return abs;
+	return sqrt(real*real+imag*imag);
 }
 void Complex::print(){
  cout << '(' << real << ") + (" << imag << ")i" << endl;
@@ -81,7 +80,7 @@ void Complex::setImag(double i)
 string Complex::toString()
 {
 stringstream ss;
-if (imag=0)
+if (imag == 0)
 {
 ss << real << " ";
 return ss.str();
@@ -92,58 +91,103 @@ return ss.str();
 }
 }
 
-Complex Complex::operator+(Complex& that)
-{
+Complex Complex::operator+(const Complex& that) {
  return this->add(that);
 }
 
-Complex Complex::operator-(Complex& that)
-{
+Complex Complex::operator-(const Complex& that) {
  return this->sub(that);
 }
 
-Complex Complex::operator*(Complex& that)
-{
+Complex Complex::operator*(const Complex& that) {
  return this->mult(that);
 }
 
-Complex Complex::operator/(Complex& that)
-{
+Complex Complex::operator/(const Complex& that) {
  return this->div(that);
 }
 
-Complex& Complex::operator+=(Complex& that)
-{
- *this = (*this) + that;
- return *this;
-}
-Complex& Complex::operator-=(Complex& that)
-{
- *this = (*this) - that;
- return *this;
-}
-
-Complex& Complex::operator*=(Complex& that)
-{
- *this = (*this) * that;
- return *this;
-}
-Complex& Complex::operator/=(Complex& that)
-{
- *this = (*this) / that;
- return *this;
-}
-
-Complex Complex::operator+()
-{
+Complex& Complex::operator+=(const Complex& that) {
+	*this = this->add(that);
 	return *this;
 }
 
+Complex& Complex::operator-=(const Complex& that) {
+	*this = this->sub(that);
+	return *this;
+}
 
-Complex Complex::operator-()
-{
-Complex temp = *this;
-temp.real = -1* temp.real;
-temp.imag = -1 * temp.imag;
-return temp;
+Complex& Complex::operator*=(const Complex& that) {
+	*this = this->mult(that);
+	return *this;
+}
+
+Complex& Complex::operator/=(const Complex& that) {
+	*this = this->div(that);
+	return *this;
+}
+
+double Complex::operator[](int i) {
+	if (i == 0)
+		return real;
+	else if (i == 1)
+		return imag;
+	else
+		return 0;
+}
+
+Complex Complex::operator+() {
+	return *this;
+}
+
+Complex Complex::operator-() {
+	return Complex((-1)*real, (-1)*imag);
+}
+
+Complex& Complex::operator++() {
+	real += 1;
+	return *this;
+}
+
+Complex Complex::operator++(int) {
+	Complex temp = *this;
+	real += 1;
+	return temp;
+}
+
+Complex Complex::operator--(int) {
+	Complex temp = *this;
+	real -= 1;
+	return temp;
+}
+
+Complex& Complex::operator--() {
+	real -= 1;
+	return *this;
+}
+
+Complex operator+(double d, const Complex& c) {
+	return Complex(c.real + d, c.imag);
+}
+
+Complex operator-(double d, const Complex& c) {
+	return Complex(c.real - d, c.imag);
+}
+
+Complex operator*(double d, const Complex& c) {
+	return Complex(c.real * d, c.imag * d);
+}
+
+Complex operator/(double d, const Complex& c) {
+	return Complex(c.real / d, c.imag / d);
+}
+
+ostream& operator<<(ostream& os, const Complex& c) {
+	os << c.real << " + " << c.imag << "i";
+	return os;
+}
+
+istream& operator>>(istream& is, Complex& c) {
+	is >> c.real >> c.imag;
+	return is;
 }

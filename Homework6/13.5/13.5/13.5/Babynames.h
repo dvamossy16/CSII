@@ -13,9 +13,9 @@ private:
 public:
 	Babyname(int year, char gender, string name, int rank);
 	Babyname();
-	int getyear();
-	int getrank();
-	char getgender();
-	string getname();
+	int getYear();
+	int getRank();
+	char getGender();
+	string getName();
 
 };

@@ -45,15 +45,15 @@ bool Circle::operator==(Circle& that)
 }
 bool Circle::operator!=(Circle& that)
 {
-	return getRadius() != that.getRadius();
+	return !(*this==that);
 }
 
 bool Circle::operator<=(Circle& that)
 {
-	return getRadius() <= that.getRadius();
+	return !(*this>that);
 }
 
 bool Circle::operator>=(Circle& that)
 {
-	return getRadius() >= that.getRadius();
+	return !(*this<that);
 }

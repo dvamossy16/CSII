@@ -5,19 +5,19 @@
 
 using namespace std;
 
-int Babyname::getyear()
+int Babyname::getYear()
 {
 	return year;
 }
-int Babyname::getrank()
+int Babyname::getRank()
 {
 	return rank;
 }
-char Babyname::getgender()
+char Babyname::getGender()
 {
 	return gender;
 }
-string Babyname::getname()
+string Babyname::getName()
 {
 	return name;
 }
