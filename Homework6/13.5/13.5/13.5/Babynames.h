@@ -12,6 +12,7 @@ private:
 	string name;
 public:
 	Babyname(int year, char gender, string name, int rank);
+	Babyname();
 	int getyear();
 	int getrank();
 	char getgender();

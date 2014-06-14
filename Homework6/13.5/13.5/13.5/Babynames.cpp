@@ -29,3 +29,6 @@ Babyname::Babyname(int year, char gender, string name, int rank)
 	this->name = name;
 	this->rank = rank;
 }
+Babyname::Babyname()
+{
+}

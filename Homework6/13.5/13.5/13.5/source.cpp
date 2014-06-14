@@ -8,9 +8,15 @@ using namespace std;
  
 int main ( )
 {
- Babyname babyname;
+ Babyname Babyname(int year,  char gender, string name, int rank);
  string inputName, boyName, girlName;
  ifstream babyFile;
+ cout << "Enter a year: " << endl;
+ int year;
+ cin >> year;
+ cout <<"Enter a gender: " << endl;
+ char gender;
+ cin >> gender;
  char another = 'y';
  int rank;
  while (another =='y')
@@ -33,13 +39,11 @@ int main ( )
    if (inputName == boyName)
    {
     cout << inputName << " is ranked "
-     << babyname.getrank() << " in popularity among boys.\n";
+     << rank << " in popularity among boys.\n";
    }
   }
   babyFile.close();
   babyFile.clear();
-  cout << "Try another name? ";
-  cin >> another;
  }
  system("pause");
  return 0;

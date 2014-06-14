@@ -92,6 +92,58 @@ return ss.str();
 }
 }
 
-Complex Complex::operator+(cont Complex& that) {
+Complex Complex::operator+(Complex& that)
+{
  return this->add(that);
+}
+
+Complex Complex::operator-(Complex& that)
+{
+ return this->sub(that);
+}
+
+Complex Complex::operator*(Complex& that)
+{
+ return this->mult(that);
+}
+
+Complex Complex::operator/(Complex& that)
+{
+ return this->div(that);
+}
+
+Complex& Complex::operator+=(Complex& that)
+{
+ *this = (*this) + that;
+ return *this;
+}
+Complex& Complex::operator-=(Complex& that)
+{
+ *this = (*this) - that;
+ return *this;
+}
+
+Complex& Complex::operator*=(Complex& that)
+{
+ *this = (*this) * that;
+ return *this;
+}
+Complex& Complex::operator/=(Complex& that)
+{
+ *this = (*this) / that;
+ return *this;
+}
+
+Complex Complex::operator+()
+{
+	return *this;
+}
+
+
+Complex Complex::operator-()
+{
+Complex temp = *this;
+temp.real = -1* temp.real;
+temp.imag = -1 * temp.imag;
+return temp;
 }
