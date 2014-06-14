@@ -91,3 +91,7 @@ ss << real << " + " << imag << "i";
 return ss.str();
 }
 }
+
+Complex Complex::operator+(cont Complex& that) {
+ return this->add(that);
+}

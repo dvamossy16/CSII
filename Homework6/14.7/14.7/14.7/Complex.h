@@ -34,6 +34,8 @@ public:
  Complex Complex::operator++(int);
  Complex Complex::operator--(int);
  Complex Complex::operator--();
+ Complex Complex::operator<<(Complex& that);
+ Complex Complex::operator>>(Complex& that);
 
 private:
  double real, imag;
