@@ -2,31 +2,30 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib> 
-#include <vector>
 
-const int size = 10000;
+void read();
 
 using namespace std;
 int main()
 {
-	int rank, dummy;
-	string name,male, female;
-	string line = " ";
-	bool male_found = false, female_found = false;
-
 	cout << "Enter the year: ";
 	int year;
 	cin >> year;
 	cout <<"Enter the gender: ";
 	char gender;
 	cin >> gender;
-	cout <<"Enter the name: ";
-	cin >> name;
+	read();
+	system("pause");
+	return 0;
 
-	string filename;
+}
+
+void read() 
+{
 	for (int i = 0; i < 10; i++) 
 	{
-		if (i == 9)
+		string filename;
+		if (i == 9) 
 			filename = "babynames2010.txt";
 		else
 		{
@@ -34,54 +33,60 @@ int main()
 			filename += static_cast<char>((i + 1) + '0');
 			filename += ".txt";
 		}
+
+		ifstream input(filename.c_str());
+		input.open("babynames2010.txt");
+		if (input.fail())
+		{
+			cout << "Could not open file " << endl;
+			exit (1);
+		}
+		string male, female;
+		string line = " ";
+		int dummy, rank;
+		bool male_found = false, female_found = false;
+		string name;
+		cout << "Enter the name: ";
+		cin >> name;
+		while (!input.eof() && male_found != true && female_found != true) 
+		{
+			input >> rank; 
+			input >> male;
+			input >> dummy; // Skip the number of boy's name
+			input >> female;
+			input >> dummy; // Skip the number of girl's name
+			getline(input,line);
+			if(name == male)
+			{
+				male_found=true;
+			}
+			else if (name == female) {
+				female_found=true;
+			}
+
+			if(male_found == true && female_found != true)
+			{
+				cout << name << " is ranked #" << rank << " in popularity among boys.\n";
+				break;
+			}
+			else if (male_found != true && female_found == true)
+			{
+				cout << name << " is ranked #" << rank << " in popularity among girls.\n";
+				break;
+			}
+			else if (male_found == true && female_found == true)
+			{
+				cout << name << " is ranked " << rank << " in popularity among boys.\n";
+				cout << name << " is ranked " << rank << " in popularity among girls.\n";
+				break;
+			}
+		}
+		if (male_found != true && female_found != true)
+		{
+			cout << " not ranked. " << endl;
+		}
+
+		input.close();
+		input.clear();
 	}
-
-		ifstream infile(filename.c_str());
-		if (infile.fail())
-		{
-			cout << "Can't open the file\n";
-			exit(1);
-		} 
-
-	while (!infile.eof() && male_found != true && female_found != true) 
-		{
-		infile >> rank >> male >> dummy >> female >> dummy;
-		getline(infile,line);
-						
-		if(name == male)
-		{
-			male_found=true;
-		}
-		else if (name == female) {
-			female_found=true;
-		}
-
-		if(male_found == true && female_found != true)
-		{
-			cout << name << " is ranked #" << rank << " in popularity among boys.\n";
-			break;
-		}
-		else if (male_found != true && female_found == true)
-		{
-			cout << name << " is ranked #" << rank << " in popularity among girls.\n";
-			break;
-		}
-		else if (male_found == true && female_found == true)
-		{
-			cout << name << " is ranked " << rank << " in popularity among boys.\n";
-			cout << name << " is ranked " << rank << " in popularity among girls.\n";
-			break;
-		}
-		}
-	if (male_found != true && female_found != true)
-	{
-		cout << name << " is not ranked. " << endl;
-	}
-	infile.close();
-	infile.clear();
-	system("pause");
-	return 0;
-	
 }
-
-
