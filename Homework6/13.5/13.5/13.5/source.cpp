@@ -2,16 +2,17 @@
 #include <iostream>
 #include <fstream>
 #include <cstdlib> 
+#include "Babynames.h"
+
+using namespace std;
  
 int main ( )
 {
- using namespace std; 
- 
+ Babyname babyname;
  string inputName, boyName, girlName;
  ifstream babyFile;
- int rank;
  char another = 'y';
-  
+ int rank;
  while (another =='y')
  {
   babyFile.open("babynames2010.txt");
@@ -32,7 +33,7 @@ int main ( )
    if (inputName == boyName)
    {
     cout << inputName << " is ranked "
-     << rank << " in popularity among boys.\n";
+     << babyname.getrank() << " in popularity among boys.\n";
    }
   }
   babyFile.close();
@@ -40,5 +41,6 @@ int main ( )
   cout << "Try another name? ";
   cin >> another;
  }
+ system("pause");
  return 0;
 }
