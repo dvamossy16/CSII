@@ -39,7 +39,7 @@ int main ( )
    if (inputName == boyName)
    {
     cout << inputName << " is ranked "
-     << rank << " in popularity among boys.\n";
+     << rank << " in popularity among boys in year " << year << endl;
    }
   }
   babyFile.close();
