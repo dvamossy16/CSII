@@ -74,12 +74,20 @@ double Complex::getImag() const{
 void Complex::setReal(double r){
  real = r;
 }
-void Complex::setImag(double i){
+void Complex::setImag(double i)
+{
  imag = i;
 }
 string Complex::toString()
 {
 stringstream ss;
+if (imag=0)
+{
+ss << real << " ";
+return ss.str();
+}
+else {
 ss << real << " + " << imag << "i";
 return ss.str();
+}
 }
