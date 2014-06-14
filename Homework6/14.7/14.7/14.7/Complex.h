@@ -19,6 +19,22 @@ public:
  double getImag() const;
  void setReal(double r);
  void setImag(double i);
+ Complex Complex::operator+(Complex& that);
+ Complex Complex::operator-(Complex& that);
+ Complex Complex::operator*(Complex& that);
+ Complex Complex::operator/(Complex& that);
+ Complex Complex::operator+=(Complex& that);
+ Complex Complex::operator-=(Complex& that);
+ Complex Complex::operator*=(Complex& that);
+ Complex Complex::operator/=(Complex& that);
+ Complex Complex::operator[](Complex& that);
+ Complex Complex::operator+()();
+ Complex Complex::operator-()();
+ Complex Complex::operator++();
+ Complex Complex::operator++(int);
+ Complex Complex::operator--(int);
+ Complex Complex::operator--();
+
 private:
  double real, imag;
 };
