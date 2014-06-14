@@ -23,5 +23,9 @@ int main(){
  reset(r1,i1,a,c);
  c = a.div(b);
  cout << "Division: \t(" << c.getReal() << ") + (" << c.getImag() << ")i" << endl;
+
+ reset(r1,i1,a,c);
+ c = a.abs(b);
+ cout << "Absolute: \t(" << c.getReal() << ") + (" << c.getImag() << ")i" << endl;
  return 0;
 }

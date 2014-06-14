@@ -46,7 +46,12 @@ Complex Complex::div(Complex c){
  div.imag = (imag*c.real-real*c.imag)/(c.real*c.real + c.imag*c.imag);
  return div;
 }
-
+Complex Complex::abs(Complex c)
+{
+	Complex abs;
+	abs.real = sqrt(real*c.real*real*c.real+imag*c.imag*imag*c.imag);
+		return abs;
+}
 void Complex::print(){
  cout << '(' << real << ") + (" << imag << ")i" << endl;
 }
