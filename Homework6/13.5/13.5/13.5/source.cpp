@@ -3,8 +3,6 @@
 #include <fstream>
 #include <cstdlib> 
 
-void read();
-
 using namespace std;
 int main()
 {
@@ -14,28 +12,17 @@ int main()
 	cout <<"Enter the gender: ";
 	char gender;
 	cin >> gender;
-	read();
-	system("pause");
-	return 0;
-
-}
-
-void read() 
-{
-	for (int i = 0; i < 10; i++) 
-	{
-		string filename;
-		if (i == 9) 
-			filename = "babynames2010.txt";
-		else
-		{
-			filename += "babynames200";
-			filename += static_cast<char>((i + 1) + '0');
-			filename += ".txt";
-		}
+	string filename;
+		 if (year == 2010)
+              filename = "C:\\Users\\dvamo_000\\Desktop\\babynames2010.txt";
+       else
+       {
+              filename = "C:\\Users\\dvamo_000\\Desktop\\babynames200";
+              filename += static_cast<char>((year + 1) + '0');
+              filename += ".txt";
+       }
 
 		ifstream input(filename.c_str());
-		input.open("babynames2010.txt");
 		if (input.fail())
 		{
 			cout << "Could not open file " << endl;
@@ -43,7 +30,8 @@ void read()
 		}
 		string male, female;
 		string line = " ";
-		int dummy, rank;
+		string dummy;
+		int rank;
 		bool male_found = false, female_found = false;
 		string name;
 		cout << "Enter the name: ";
@@ -88,5 +76,8 @@ void read()
 
 		input.close();
 		input.clear();
-	}
+	system("pause");
+	return 0;
+
 }
+
