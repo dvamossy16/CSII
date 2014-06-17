@@ -31,7 +31,7 @@ int main()
 	// using inbuilt algorithm + overloaded operators to sort it
 	sort(runners.begin(), runners.end(), Runner::compare);
 
-	for (int i = 0; i < runners.size(); i++)     // test whether it really sorts it according to pace
+	for (unsigned int i = 0; i < runners.size(); i++)     // test whether it really sorts it according to pace
 	{
 		cout << "\t";
 		runners.at(i).write();
@@ -39,42 +39,42 @@ int main()
 
 	ofstream output;
 
-	for (int i = 0; i < runners.size(); i++)
+	for (unsigned int i = 0; i < runners.size(); i++)
 	{
 	if (pace < 360 && pace > 0)
 	{
-		output.open("white.txt",  ios::out | ios::app);
-		output << firstname << lastname << pace;
+		output.open("white.txt");
+		output << firstname << lastname << pace << endl;
 	}
 	else if (pace > 361 && pace < 420)
 	{
-		output.open("C:\\Users\\dvamo_000\\Desktop\\yellow.txt",  ios::out | ios::app);
-		output << firstname << lastname << pace;
+		output.open("yellow.txt");
+		output << firstname << lastname << pace << endl;
 	}
 	else if (pace > 421 && pace < 480)
 	{
-		output.open("C:\\Users\\dvamo_000\\Desktop\\green.txt", ios::out | ios::app);
-		output << firstname << lastname << pace;
+		output.open("green.txt");
+		output << firstname << lastname << pace << endl;
 	}
 	else if (pace > 481 && pace < 540)
 	{
-		output.open("C:\\Users\\dvamo_000\\Desktop\\orange.txt",  ios::out | ios::app);
-		output << firstname << lastname << pace;
+		output.open("orange.txt");
+		output << firstname << lastname << pace << endl;
 	}
 	else if (pace > 541 && pace < 600)
 	{
-		output.open("C:\\Users\\dvamo_000\\Desktop\\blue.txt", ios::out | ios::app);
-		output << firstname << lastname << pace;
+		output.open("blue.txt");
+		output << firstname << lastname << pace << endl;
 	}
 	else if (pace > 601 && pace < 720)
 	{
-		output.open("C:\\Users\\dvamo_000\\Desktop\\lilac.txt",  ios::out | ios::app);
-		output << firstname << lastname << pace;
+		output.open("lilac.txt");
+		output << firstname << lastname << pace << endl;
 	}
 	else if (pace > 721 && pace < 1200)
 	{
-		output.open("C:\\Users\\dvamo_000\\Desktop\\red.txt",  ios::out | ios::app);
-		output << firstname << lastname << pace;
+		output.open("red.txt");
+		output << firstname << lastname << pace << endl;
 	}
 	}
 	input.close();
