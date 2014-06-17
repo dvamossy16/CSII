@@ -17,6 +17,11 @@ string get_firstname();
 string get_lastname();
 int get_pace();
 bool operator <(Runner& that);
+void write()
+{
+	cout << "Runner: " << firstname << lastname << pace << endl;
+}
+
 static bool compare(Runner lhs, Runner rhs)
 { 
 	return (lhs.pace < rhs.pace); 

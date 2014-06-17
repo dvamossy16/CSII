@@ -20,7 +20,7 @@ int main()
 	vector <Runner> runners;
 	string firstname, lastname;
 	int pace;
-
+	// read in the runners and push them onto the vector
 	while (!input.eof()) 
 	{		
 		input >> firstname >> lastname >> pace;
@@ -28,8 +28,14 @@ int main()
 		runners.push_back(runner);
 	}
 
-	// now sort the vector - there must be a better way
+	// using inbuilt algorithm + overloaded operators to sort it
 	sort(runners.begin(), runners.end(), Runner::compare);
+
+	for (int i = 0; i < runners.size(); i++)     // test whether it really sorts it according to pace
+	{
+		cout << "\t";
+		runners.at(i).write();
+	}
 
 	ofstream output;
 
