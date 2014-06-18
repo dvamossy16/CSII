@@ -44,37 +44,37 @@ int main()
 	if (pace < 360 && pace > 0)
 	{
 		output.open("white.txt");
-		output << firstname << lastname << pace << endl;
+		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
 	}
 	else if (pace > 361 && pace < 420)
 	{
 		output.open("yellow.txt");
-		output << firstname << lastname << pace << endl;
+		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
 	}
 	else if (pace > 421 && pace < 480)
 	{
 		output.open("green.txt");
-		output << firstname << lastname << pace << endl;
+		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
 	}
 	else if (pace > 481 && pace < 540)
 	{
 		output.open("orange.txt");
-		output << firstname << lastname << pace << endl;
+		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
 	}
 	else if (pace > 541 && pace < 600)
 	{
 		output.open("blue.txt");
-		output << firstname << lastname << pace << endl;
+		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
 	}
 	else if (pace > 601 && pace < 720)
 	{
 		output.open("lilac.txt");
-		output << firstname << lastname << pace << endl;
+		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
 	}
 	else if (pace > 721 && pace < 1200)
 	{
 		output.open("red.txt");
-		output << firstname << lastname << pace << endl;
+		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
 	}
 	}
 	input.close();
