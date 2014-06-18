@@ -45,49 +45,48 @@ int main()
 	{
 	if (runners.at(i).get_pace() < 360 && runners.at(i).get_pace() > 0)
 	{
-		output.open("white.txt");
+		output.open("white.txt", ios::app);
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
-		continue;
+		output.close();
 	}
 	else if (runners.at(i).get_pace() > 361 && runners.at(i).get_pace() < 420)
 	{
-		output.open("yellow.txt");
+		output.open("yellow.txt", ios::app);
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
-		continue;
+		output.close();
 	}
 	else if (runners.at(i).get_pace() > 421 && runners.at(i).get_pace() < 480)
 	{
-		output.open("green.txt");
+		output.open("green.txt", ios::app);
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
-		continue;
+		output.close();
 	}
 	else if (runners.at(i).get_pace() > 481 && runners.at(i).get_pace() < 540)
 	{
-		output.open("orange.txt");
+		output.open("orange.txt", ios::app);
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
-		continue;
+		output.close();
 	}
 	else if (runners.at(i).get_pace() > 541 && runners.at(i).get_pace() < 600)
 	{
-		output.open("blue.txt");
+		output.open("blue.txt", ios::app);
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
-		continue;
+		output.close();
 	}
 	else if (runners.at(i).get_pace() > 601 && runners.at(i).get_pace() < 720)
 	{
-		output.open("lilac.txt");
+		output.open("lilac.txt", ios::app);
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
-		continue;
+		output.close();
 	}
 	else if (runners.at(i).get_pace() > 721 && runners.at(i).get_pace() < 1200)
 	{
-		output.open("red.txt");
+		output.open("red.txt", ios::app);
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
-		continue;
+		output.close();
 	}
 	}
-	output.close();
-
+	
 	cout << "\nCopy Done" << endl;
 	system("pause");
 
