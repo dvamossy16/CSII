@@ -28,6 +28,8 @@ int main()
 		runners.push_back(runner);
 	}
 
+	input.close();
+
 	// using inbuilt algorithm + overloaded operators to sort it
 	sort(runners.begin(), runners.end(), Runner::compare);
 
@@ -41,43 +43,49 @@ int main()
 
 	for (unsigned int i = 0; i < runners.size(); i++)
 	{
-	if (pace < 360 && pace > 0)
+	if (runners.at(i).get_pace() < 360 && runners.at(i).get_pace() > 0)
 	{
 		output.open("white.txt");
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
+		continue;
 	}
-	else if (pace > 361 && pace < 420)
+	else if (runners.at(i).get_pace() > 361 && runners.at(i).get_pace() < 420)
 	{
 		output.open("yellow.txt");
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
+		continue;
 	}
-	else if (pace > 421 && pace < 480)
+	else if (runners.at(i).get_pace() > 421 && runners.at(i).get_pace() < 480)
 	{
 		output.open("green.txt");
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
+		continue;
 	}
-	else if (pace > 481 && pace < 540)
+	else if (runners.at(i).get_pace() > 481 && runners.at(i).get_pace() < 540)
 	{
 		output.open("orange.txt");
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
+		continue;
 	}
-	else if (pace > 541 && pace < 600)
+	else if (runners.at(i).get_pace() > 541 && runners.at(i).get_pace() < 600)
 	{
 		output.open("blue.txt");
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
+		continue;
 	}
-	else if (pace > 601 && pace < 720)
+	else if (runners.at(i).get_pace() > 601 && runners.at(i).get_pace() < 720)
 	{
 		output.open("lilac.txt");
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
+		continue;
 	}
-	else if (pace > 721 && pace < 1200)
+	else if (runners.at(i).get_pace() > 721 && runners.at(i).get_pace() < 1200)
 	{
 		output.open("red.txt");
 		output << runners.at(i).get_firstname() << runners.at(i).get_lastname() << runners.at(i).get_pace() << endl;
+		continue;
 	}
 	}
-	input.close();
 	output.close();
 
 	cout << "\nCopy Done" << endl;
